@@ -19,7 +19,10 @@ const ai = new GoogleGenAI({
 });
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://telugutilakam.vercel.app", "http://telugutilakam.jntugvcev.in"], 
+  credentials: true
+}));
 app.use(express.json());
 app.use("/", authRoutes);
 // MongoDB Connection
